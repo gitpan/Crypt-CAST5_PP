@@ -3,10 +3,7 @@ Changes
 MANIFEST
 Makefile.PL
 README
-mkdecrypt
-mkencrypt
 mkschedule
-t/0bitop.t
 t/1cast5.t
 t/2cbc.t
 test/slowtest.pl

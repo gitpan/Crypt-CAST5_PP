@@ -1,5 +1,10 @@
 Revision history for Perl extension Crypt::CAST5_PP.
 
+0.03  7 Mar 2002
+        - try to speed up bulk operations by building special
+          encrypt/decrypt function on the fly
+        - hopefully improved portability
+
 0.02  4 Mar 2002
         - updated test scripts
         - use AutoSplit

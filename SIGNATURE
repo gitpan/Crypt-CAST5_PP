@@ -1,0 +1,33 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.05.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It would check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 26df0334440ef3ddb349c656078e5755fdd322dd CAST5_PP.pm
+SHA1 0bdac471e587d8f861b5eb3da1cd6d83dc77abae CAST5_PP/Tables.pm
+SHA1 c3b888c516b952b5e6a209eec862ad79acfadda6 Changes
+SHA1 60fbf3ed6fe977e7d1551893426935809ff4d0e4 MANIFEST
+SHA1 2d0c257795a2659db36b493507d9b5ee5904adb5 Makefile.PL
+SHA1 f0c1ee435b37fd02636fbacefafe52e3fbf6b564 README
+SHA1 05dffe8e21c92b80dd09a8f50a9e5350bc3e499d mkschedule
+SHA1 e9496ccd429749ba130dd89848eb439333371ad3 t/1cast5.t
+SHA1 f3a2a7662307cdb7d46d9451c5333d75c867c9e1 t/2cbc.t
+SHA1 6dd71c294b1c87165ee45e6de8b25019a7f5b825 test/slowtest.pl
+SHA1 d152c630d6cd72ff6fa49d6e1f429dad266fb645 test/speedtest.pl
+-----BEGIN PGP SIGNATURE-----
+
+iD8DBQE9c5K0PgDecCrBEpcRAi0JAJ0UyESyjfWtEZTxuCdLcJz9+67wVwCfTQMJ
++sTfBxWSkv5qXkZ2ojOfNTQ=
+=7tFN
+-----END PGP SIGNATURE-----

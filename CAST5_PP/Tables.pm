@@ -2,7 +2,6 @@
 # S-box tables for CAST5 encryption
 
 use strict;
-use warnings;
 use integer;
 
 @Crypt::CAST5_PP::s1 = (

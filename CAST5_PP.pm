@@ -1,14 +1,13 @@
 package Crypt::CAST5_PP;
 
-require 5.006;
+require 5.004;
 use strict;
-use warnings;
 use AutoLoader qw( AUTOLOAD );
 use Carp;
 use integer;
 use vars qw( @s1 @s2 @s3 @s4 @s5 @s6 @s7 @s8 $VERSION );
 
-$VERSION = "1.01";
+$VERSION = "1.02";
 
 sub new {
   my ($class, $key) = @_;
@@ -91,9 +90,9 @@ encryption key.
 Encrypt a block of plaintext using the current encryption key, and return
 the corresponding ciphertext. The input must be 8 bytes long, and the output
 has the same length. Note that the encryption is in ECB mode, which means
-that it encrypts each block independently. If you are encrypting many data
-blocks, it is generally best to use some form of chaining between blocks.
-See L<Crypt::CBC>.
+that it encrypts each block independently. That can leave you vulnerable
+to dictionary attacks, so it is generally best to use some form of chaining
+between blocks; see L<Crypt::CBC>.
 
 =head2 decrypt
 
@@ -121,7 +120,6 @@ modify it under the same terms as Perl itself.
 
 sub init {
   use strict;
-  use warnings;
   use integer;
   my ($cast5, $key) = @_;
   croak "Key length must be 40 to 128 bits"
@@ -179,7 +177,6 @@ sub init {
 
 sub encrypt {
   use strict;
-  use warnings;
   use integer;
   my ($cast5, $block) = @_;
   croak "Block size must be 8" if length($block) != 8;
@@ -216,7 +213,6 @@ sub encrypt {
 
 sub decrypt {
   use strict;
-  use warnings;
   use integer;
   my ($cast5, $block) = @_;
   croak "Block size must be 8" if length($block) != 8;

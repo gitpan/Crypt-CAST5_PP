@@ -4,11 +4,13 @@ The CAST5 block cipher, implemented in pure Perl.
 
 
 Dependencies:
+    Module::Signature is needed to check the signature
     Test::More is needed to run the tests
     Crypt::CBC (version 1.22 or greater) is useful but not required
 
 
 Installation:
+    cpansign -v
     perl Makefile.PL
     make
     make test

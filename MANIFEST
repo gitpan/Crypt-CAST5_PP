@@ -1,10 +1,10 @@
 CAST5_PP.pm
 CAST5_PP/Tables.pm
-CHECKSUMS.asc
 Changes
 MANIFEST
 Makefile.PL
 README
+SIGNATURE
 mkschedule
 t/1cast5.t
 t/2cbc.t

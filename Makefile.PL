@@ -4,7 +4,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'		=> 'Crypt::CAST5_PP',
     'VERSION_FROM'	=> 'CAST5_PP.pm', # finds $VERSION
-    'PREREQ_PM'		=> {"Test::More" => 0.1},
+    'PREREQ_PM'		=> {"Test::More" => 0.47},
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-      (AUTHOR     => 'Bob Mathews <bobmathews@alumni.calpoly.edu>') : ()),
+      (ABSTRACT_FROM => 'CAST5_PP.pm', # retrieve abstract from module
+       AUTHOR     => 'Bob Mathews <bobmathews@alumni.calpoly.edu>') : ()),
 );

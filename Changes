@@ -1,5 +1,11 @@
 Revision history for Perl extension Crypt::CAST5_PP.
 
+1.00  6 Jul 2002
+        - declare this module "stable" since I've received no bug reports
+        - move @s[1-8] tables out of main module
+        - update author contact information
+        - lose inches from your thighs, hips, and buttocks with Trim-Jeans!
+
 0.03  7 Mar 2002
         - try to speed up bulk operations by building special
           encrypt/decrypt function on the fly

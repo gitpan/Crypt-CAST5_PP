@@ -2,12 +2,13 @@ package Crypt::CAST5_PP;
 
 require 5.006;
 use strict;
+use warnings;
 use AutoLoader qw( AUTOLOAD );
 use Carp;
 use integer;
 use vars qw( @s1 @s2 @s3 @s4 @s5 @s6 @s7 @s8 $VERSION );
 
-$VERSION = "1.00";
+$VERSION = "1.01";
 
 sub new {
   my ($class, $key) = @_;
@@ -19,6 +20,9 @@ sub new {
 
 sub blocksize { return 8  }
 sub keysize   { return 16 }
+
+1 # end module
+__END__
 
 =head1 NAME
 
@@ -115,10 +119,9 @@ modify it under the same terms as Perl itself.
 
 =cut
 
-1 # end module
-__END__
-
 sub init {
+  use strict;
+  use warnings;
   use integer;
   my ($cast5, $key) = @_;
   croak "Key length must be 40 to 128 bits"
@@ -175,6 +178,8 @@ sub init {
 } # init
 
 sub encrypt {
+  use strict;
+  use warnings;
   use integer;
   my ($cast5, $block) = @_;
   croak "Block size must be 8" if length($block) != 8;
@@ -182,7 +187,7 @@ sub encrypt {
   my $encrypt = $cast5->{encrypt};
   unless ($encrypt) {
     my $key = $cast5->{key} or croak "Call init() first";
-    $f = 'sub{my($l,$r,$i)=unpack"N2",$_[0];';
+    my $f = 'sub{my($l,$r,$i)=unpack"N2",$_[0];';
 
     my ($l, $r) = qw( $l $r );
     my ($op1, $op2, $op3) = qw( + ^ - );
@@ -210,6 +215,8 @@ sub encrypt {
 } # encrypt
 
 sub decrypt {
+  use strict;
+  use warnings;
   use integer;
   my ($cast5, $block) = @_;
   croak "Block size must be 8" if length($block) != 8;
@@ -218,7 +225,7 @@ sub decrypt {
   unless ($decrypt) {
     my $key = $cast5->{key} or croak "Call init() first";
     my $rounds = $cast5->{rounds};
-    $f = 'sub{my($r,$l,$i)=unpack"N2",$_[0];';
+    my $f = 'sub{my($r,$l,$i)=unpack"N2",$_[0];';
 
     my ($l, $r) = qw( $r $l );
     my ($op1, $op2, $op3) = qw( - + ^ );

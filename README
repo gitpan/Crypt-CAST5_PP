@@ -2,14 +2,17 @@ Crypt::CAST5_PP
 
 The CAST5 block cipher, implemented in pure Perl.
 
+
+Dependencies:
+    Test::More is needed to run the tests
+    Crypt::CBC (version 1.22 or greater) is useful but not required
+
+
 Installation:
     perl Makefile.PL
     make
     make test
     make install
-
-To Do:
-Think about using autosplit.
 
 
 Copyright (c) 2002 Bob Mathews. All rights reserved.

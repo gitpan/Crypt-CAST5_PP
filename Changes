@@ -1,6 +1,10 @@
 Revision history for Perl extension Crypt::CAST5_PP.
 
-0.01  Sun Feb 24 17:41:22 2002
+0.02  4 Mar 2002
+        - updated test scripts
+        - use AutoSplit
+
+0.01  24 Feb 2002
 	- original version; created by h2xs 1.21 with options
 		-AX -n Crypt::CAST5_PP
 

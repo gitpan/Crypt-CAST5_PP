@@ -1,12 +1,12 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.05.
+signed via the Module::Signature module, version 0.44.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
 
     % cpansign -v
 
-It would check each file's integrity, as well as the signature's
+It will check each file's integrity, as well as the signature's
 validity.  If "==> Signature verified OK! <==" is not displayed,
 the distribution may already have been compromised, and you should
 not run its Makefile.PL or Build.PL.
@@ -14,20 +14,25 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 26df0334440ef3ddb349c656078e5755fdd322dd CAST5_PP.pm
+SHA1 46774fe69df3170844770be15f3b21787724d060 CAST5_PP.pm
 SHA1 0bdac471e587d8f861b5eb3da1cd6d83dc77abae CAST5_PP/Tables.pm
-SHA1 c3b888c516b952b5e6a209eec862ad79acfadda6 Changes
-SHA1 60fbf3ed6fe977e7d1551893426935809ff4d0e4 MANIFEST
+SHA1 0082a35387dbe7ccebd34e95b9cff3bce5bcf900 Changes
+SHA1 e60c5b3232f4a0cdd7b1cf65729b02def6e48122 MANIFEST
+SHA1 01bdfdded63a20980003644b4237480bb4220170 META.yml
 SHA1 2d0c257795a2659db36b493507d9b5ee5904adb5 Makefile.PL
-SHA1 f0c1ee435b37fd02636fbacefafe52e3fbf6b564 README
+SHA1 ce520d3cbd6a46b7e1f72ede48169dc38f2c89bb README
 SHA1 05dffe8e21c92b80dd09a8f50a9e5350bc3e499d mkschedule
-SHA1 e9496ccd429749ba130dd89848eb439333371ad3 t/1cast5.t
-SHA1 f3a2a7662307cdb7d46d9451c5333d75c867c9e1 t/2cbc.t
+SHA1 9afb74399d65b19973f5c6bb29a5bd397f294b69 t/1cast5.t
+SHA1 9aa7c42ea1c95a8fa17d85aa7b211073e69eb9b2 t/2cbc.t
 SHA1 6dd71c294b1c87165ee45e6de8b25019a7f5b825 test/slowtest.pl
 SHA1 d152c630d6cd72ff6fa49d6e1f429dad266fb645 test/speedtest.pl
 -----BEGIN PGP SIGNATURE-----
 
-iD8DBQE9c5K0PgDecCrBEpcRAi0JAJ0UyESyjfWtEZTxuCdLcJz9+67wVwCfTQMJ
-+sTfBxWSkv5qXkZ2ojOfNTQ=
-=7tFN
+iQEVAwUBQpC5iVllvYCGFM9cAQKRkQf/Q25FijM0CTDiHG66btm3ypF7Z1RnulRD
+IilQU0ZEItZGF7YStlvu54RAJOg2wcso0BUBirqLKI0mgEUxrz5hHJ0E0NLaD0Bz
+K5UJ67ZRe6vpkIYGPHRVMY/iARgTu57arp9LvpMW8XhvedDfVXOW/Wy9rk4IR2yx
+G2q/rCaxLIt8LPiaiGqSuwIcA/gq/8ekBZQaxLO9aQDir+OOG4xdow6EJY9WH/vl
+n2uyrwJOgXhbI3lgOhQpA+5hGmEzXlCj1n7GWEFICAhbnZBC1+uV1Oy2eD31smWi
+mlNT861M7GOnJ0xHJNMWy8M9giboXu1PHnfhDl7DLSai+ELxe8m4aA==
+=53pk
 -----END PGP SIGNATURE-----

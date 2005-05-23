@@ -10,3 +10,4 @@ t/1cast5.t
 t/2cbc.t
 test/slowtest.pl
 test/speedtest.pl
+META.yml                                 Module meta-data (added by MakeMaker)

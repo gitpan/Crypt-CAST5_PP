@@ -1,9 +1,8 @@
 use Test::More tests => 8;
-use Crypt::CAST5_PP;
 
+use_ok("Crypt::CAST5_PP");
 my $cast5 = Crypt::CAST5_PP->new();
-ok($cast5,                         "Create object");
-ok($cast5->isa("Crypt::CAST5_PP"), "...of the proper type");
+isa_ok($cast5, "Crypt::CAST5_PP");
 
 # The following tests are from RFC 2144
 my @tests = (

@@ -7,7 +7,7 @@ use Carp;
 use integer;
 use vars qw( @s1 @s2 @s3 @s4 @s5 @s6 @s7 @s8 $VERSION );
 
-$VERSION = "1.02";
+$VERSION = "1.03";
 
 sub new {
   my ($class, $key) = @_;
@@ -100,6 +100,11 @@ between blocks; see L<Crypt::CBC>.
 
 Decrypt the ciphertext and return the corresponding plaintext.
 
+=head1 LIMITATIONS
+
+Always produces untainted output, even if the input is tainted, because
+that's what perl's pack() function does.
+
 =head1 SEE ALSO
 
 RFC 2144, "The CAST-128 Encryption Algorithm", C. Adams, May 1997
@@ -112,7 +117,7 @@ Bob Mathews, <bobmathews@alumni.calpoly.edu>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2002 Bob Mathews. All rights reserved.
+Copyright (c) 2005 Bob Mathews. All rights reserved.
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
@@ -125,6 +130,10 @@ sub init {
   croak "Key length must be 40 to 128 bits"
       if length($key) < 5 || length($key) > 16;
   require Crypt::CAST5_PP::Tables;
+
+  # untaint the key. this keeps the evals from blowing up later.
+  # arguably, a tainted key should result in tainted output. oh well.
+  $key =~ /^(.*)$/s and $key = $1;
 
   # null-pad the key to 16 bytes, and then split it into 32-bit chunks
   my ($s, $t, $u, $v) = unpack "N4", pack "a16", $key;
@@ -208,7 +217,7 @@ sub encrypt {
     $cast5->{encrypt} = $encrypt = eval $f;
   }
 
-  return &$encrypt($block);
+  return $encrypt->($block);
 } # encrypt
 
 sub decrypt {
@@ -246,7 +255,7 @@ sub decrypt {
     $cast5->{decrypt} = $decrypt = eval $f;
   }
 
-  return &$decrypt($block);
+  return $decrypt->($block);
 } # decrypt
 
 # end CAST5_PP.pm

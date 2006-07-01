@@ -7,7 +7,7 @@ use Carp;
 use integer;
 use vars qw( @s1 @s2 @s3 @s4 @s5 @s6 @s7 @s8 $VERSION );
 
-$VERSION = "1.03";
+$VERSION = "1.04";
 
 sub new {
   my ($class, $key) = @_;
@@ -117,7 +117,7 @@ Bob Mathews, <bobmathews@alumni.calpoly.edu>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005 Bob Mathews. All rights reserved.
+Copyright (c) 2006 Bob Mathews. All rights reserved.
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 

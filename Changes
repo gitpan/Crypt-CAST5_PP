@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::CAST5_PP.
 
+1.04  1 Jul 2006
+        - removed broken CBC test
+
 1.03  22 May 2005
         - make it work in taintmode
 
